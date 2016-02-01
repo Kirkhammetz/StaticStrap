@@ -8,17 +8,13 @@ Tired of setting everytime your gulp/grunt folders and scripts?
 Here we come, it's already done, you just have to change some path here and there if you want!
 
 ##Filesystem
--src
-    Source Container
-    -src/jade
-        jade templates files
-    -src/js
-        JS main module, you can expand it on your own
-    -src/less
-        LESS container, main.less gets compiled and minified in root/css/main.min.css
-    -src/statics
-        -static/images: images that get copyed in the root/images
-        -static/**: you can place here all you reference/psd/whatsoever
+- src Source Container
+- src/jade jade templates files
+- src/js JS main module, you can expand it on your own
+- src/less LESS container, main.less gets compiled and minified in root/css/main.min.css
+- src/statics
+    - static/images: images that get copyed in the root/images
+    - static/**: you can place here all you reference/psd/whatsoever
 
 __NB__ Scripts in src/js/ are not concatenated, but I'm sure you can easily do it on your own if you need it! CSS vendors are not concatenated, you can do it on your own if you want, _FOUNDATION_ css are compiled from the source package, you can modify scss there if you want to change something
 
