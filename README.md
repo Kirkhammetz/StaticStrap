@@ -20,7 +20,7 @@ Here we come, it's already done, you just have to change some path here and ther
         -static/images: images that get copyed in the root/images
         -static/**: you can place here all you reference/psd/whatsoever
 
-__NB__Scripts in src/js/ are not concatenated, but I'm sure you can easily do it on your own if you need it! CSS vendors are not concatenated, you can do it on your own if you want, _FOUNDATION_ css are compiled from the source package, you can modify scss there if you want to change something
+__NB__ Scripts in src/js/ are not concatenated, but I'm sure you can easily do it on your own if you need it! CSS vendors are not concatenated, you can do it on your own if you want, _FOUNDATION_ css are compiled from the source package, you can modify scss there if you want to change something
 
 __NB.2__ Vendors are concatenad in js/vendors.min.js
     you can add the link to the vendors you need to concatenate in you _static_data.json_ file
