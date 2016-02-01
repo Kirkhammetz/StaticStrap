@@ -30,7 +30,9 @@ __NB.2__ Vendors are concatenad in js/vendors.min.js
     Foundation
 
 ##HELPERS
-In root dir there is _static\_data.json_, here you can declare you variables that get passed to compiled JADE template, so you can easily add common data to all views and change it faster if you customers ask for it! (We know that this will happen...)
+In root dir there is _static\_data.json_, here you can declare you variables that get passed to compiled JADE template, so you can easily add common data to all views and change it faster if you customers ask for it! (We know that this will happen...).
+
+If you want you can your vendors scripts here and they'll get concatenated and uglified before cp in js/
 
 
 ##Installation
