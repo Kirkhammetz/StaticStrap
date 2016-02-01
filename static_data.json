@@ -1,3 +1,9 @@
 {
-	"sitename": "Drones"
+	"sitename": "Drones",
+	"scripts": {
+		"vendors": [
+			"node_modules/jquery/dist/jquery.min.js",
+			"node_modules/foundation/js/foundation/foundation.js"
+		]
+	}
 }

@@ -1,15 +1,16 @@
 {
-  "name": "drone_landing",
+  "name": "StaticStrap",
   "version": "1.0.0",
-  "description": "Drone Landing Page",
+  "description": "Bootstrap static website develop with Gulp, Jade, LESS, jQuery, Foundation",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Simone Corsi",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-jade": "^1.1.0",
     "gulp-less": "^3.0.5",

@@ -5,8 +5,15 @@ var cssmin = require('gulp-cssmin');
 var less   = require('gulp-less');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
+var concat = require('gulp-concat');
 
-var DATA = require('./static_data.json');
+/**
+ * JSON DATA
+ */
+var DATA = require('./static_data.json'),
+    Vendors = DATA.scripts.vendors;
+
+console.log(Vendors);
 
 
 var paths = {
@@ -61,6 +68,14 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('js'));  
 });
 
+ 
+gulp.task('concat_vendors', function() {
+  return gulp.src(Vendors)
+    .pipe(concat('vendors.js'))
+    .pipe(uglify())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest('js'));
+});
 
 
 // Rerun the task when a file changes 
@@ -71,5 +86,6 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['compile_vendors', 'watch', 'jade', 'scripts','less_and_minify']);
+gulp.task('default', ['compile_vendors', 'watch', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
+gulp.task('dev', ['compile_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
 
