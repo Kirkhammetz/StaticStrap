@@ -1,5 +1,5 @@
 {
-	"sitename": "Drones",
+	"sitename": "StaticStrap",
 	"vendors": {
 		"scripts": [
 			"node_modules/jquery/dist/jquery.min.js",

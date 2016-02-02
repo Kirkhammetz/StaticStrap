@@ -18,8 +18,8 @@ var DATA = require('./static_data.json'),
 
 
 var paths = {
-  jade : 'src/jade/**',
-  js   : 'src/js/**',
+  jade : 'src/jade/*.jade',
+  js   : 'src/js/*.js',
   less : 'src/less/main.less',
   img  : 'src/psd/images/**',
   fonts: 'src/psd/fonts/**',
@@ -93,6 +93,6 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['compile_and_copy_vendors', 'watch', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
-gulp.task('dev', ['compile_and_copy_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
+gulp.task('default', ['compile_and_copy_vendors', 'watch', 'scripts', 'concat_vendors','less_and_minify', 'jade',]);
+gulp.task('dev', ['compile_and_copy_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify', 'jade',]);
 
