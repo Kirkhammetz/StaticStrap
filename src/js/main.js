@@ -14,7 +14,8 @@
 			 */
 			$('.vertical-center').each(function(index, el) {
 				$(el).css({
-					'margin-top': ($(el).parent().height() - $(el).height()) / 2 + 'px'
+					'position': "relative",
+					'top': ($(el).parent().height() - $(el).height()) / 2 + 'px'
 				});
 			});
 		},

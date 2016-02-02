@@ -11,9 +11,10 @@ var concat = require('gulp-concat');
  * JSON DATA
  */
 var DATA = require('./static_data.json'),
-    Vendors = DATA.scripts.vendors;
-
-console.log(Vendors);
+    Vendors = {
+      scripts: DATA.vendors.scripts,
+      styles: DATA.vendors.styles,
+    }
 
 
 var paths = {
@@ -28,9 +29,9 @@ var paths = {
  * COMPILE VENDORS
  */
  
-gulp.task('compile_vendors', function () {
+gulp.task('compile_and_copy_vendors', function () {
 
-  gulp.src('node_modules/foundation/scss/foundation.scss')
+  gulp.src('node_modules/foundation-sites/scss/foundation.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
@@ -70,11 +71,17 @@ gulp.task('scripts', function() {
 
  
 gulp.task('concat_vendors', function() {
-  return gulp.src(Vendors)
+  gulp.src(Vendors.scripts)
     .pipe(concat('vendors.js'))
     .pipe(uglify())
     .pipe(rename({suffix:'.min'}))
     .pipe(gulp.dest('js'));
+
+  gulp.src(Vendors.styles)
+    .pipe(concat('vendors.css'))
+    .pipe(cssmin())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest('css'));
 });
 
 
@@ -86,6 +93,6 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['compile_vendors', 'watch', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
-gulp.task('dev', ['compile_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
+gulp.task('default', ['compile_and_copy_vendors', 'watch', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
+gulp.task('dev', ['compile_and_copy_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify']);
 
