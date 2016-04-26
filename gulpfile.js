@@ -31,8 +31,8 @@ var paths = {
  
 gulp.task('compile_and_copy_vendors', function () {
 
-  gulp.src('node_modules/foundation-sites/scss/foundation.scss')
-    .pipe(sass().on('error', sass.logError))
+  gulp.src(Vendors.styles)
+    .pipe(concat('vendors.css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('css'));
