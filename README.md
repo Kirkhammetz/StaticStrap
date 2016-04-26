@@ -27,7 +27,7 @@ Here we come, it's already done, you just have to change some path here and ther
     + _src/less_ LESS container, main.less gets compiled and minified in root/css/main.min.css
 - _src/statics_
     + static/images: images that get copyed in the root/images
-    + static/**: you can place here all you reference/psd/whatsoever
+    + static/fonts: place your fonts here 
 
 Vendors are declared and concatenated in js/vendors.min.js & css/vendors.min.css. You can add the link to the vendors you need to concatenate in you _static\_data.json_ file.
 
