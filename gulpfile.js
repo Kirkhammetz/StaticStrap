@@ -21,8 +21,8 @@ var paths = {
   jade : 'src/jade/*.jade',
   js   : 'src/js/*.js',
   less : 'src/less/main.less',
-  img  : 'src/static/images/**',
-  fonts: 'src/static/fonts/**',
+  img  : 'src/statics/images/**',
+  fonts: 'src/statics/fonts/**',
 };
 
 /**
