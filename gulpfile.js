@@ -88,11 +88,8 @@ gulp.task('concat_vendors', function() {
 // Rerun the task when a file changes 
 gulp.task('watch', function() {
   gulp.watch(paths.js, ['scripts']);
-  gulp.watch(['src/less/**'], ['less_and_minify']);
-  gulp.watch(paths.jade, ['jade']);
+  gulp.watch(['src/**/**'], ['compile_and_copy_vendors', 'scripts', 'concat_vendors','less_and_minify', 'jade']);
 });
 
-
-gulp.task('default', ['compile_and_copy_vendors', 'watch', 'scripts', 'concat_vendors','less_and_minify', 'jade',]);
+gulp.task('default', ['compile_and_copy_vendors', 'watch', 'scripts', 'concat_vendors','less_and_minify', 'jade']);
 gulp.task('dev', ['compile_and_copy_vendors', 'jade', 'scripts', 'concat_vendors','less_and_minify', 'jade',]);
-
