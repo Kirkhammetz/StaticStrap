@@ -3,7 +3,7 @@
 	"vendors": {
 		"scripts": [
 			"node_modules/jquery/dist/jquery.min.js",
-			"node_modules/foundation-sites/js/foundation.js"
+			"node_modules/foundation-sites/dist/foundation.js"
 		],
     "styles":[
       "node_modules/foundation-sites/dist/foundation.min.css"
