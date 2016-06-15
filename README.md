@@ -27,19 +27,15 @@ Here we come, it's already done, you just have to change some path here and ther
     + _src/less_ LESS container, main.less gets compiled and minified in root/css/main.min.css
 - _src/statics_
     + static/images: images that get copyed in the root/images
-    + static/fonts: place your fonts here 
+    + static/fonts: place your fonts here
+- _dist/_ Compiled website distribuition
 
-Vendors are declared and concatenated in js/vendors.min.js & css/vendors.min.css. You can add the link to the vendors you need to concatenate in you _static\_data.json_ file.
+
+##HELPERS
+In the root DIR there is _env.json_, here you can declare you variables that get passed to compiled JADE template, so you can easily add common data to all views and change it faster if you customers ask for it! (We know that this will happen...).
+
+__Vendors__: You can add your vendors paths here in this file, there is an array for it, they'll be concatenated and uglified and added in js/vendors.min.js or css/vendords.min.css
 
 __BEWARE!__ WRITE SCRIPTs IN THE RIGHT ORDER!
 
-__NB__ Scripts in src/js/ are not concatenated, but I'm sure you can easily do it on your own if you need it! 
-
-##HELPERS
-In root dir there is _static\_data.json_, here you can declare you variables that get passed to compiled JADE template, so you can easily add common data to all views and change it faster if you customers ask for it! (We know that this will happen...).
-
-__Vendors__: You can declare your vendors paths here in this file, there is an array for it, they'll be concatenated and uglified and added in js/vendors.min.js or css/vendords.min.css
-
-
-
-You are now ready to create something awesome!
+#####You are now ready to create something awesome!
