@@ -56,6 +56,8 @@ use index.php to post data from your scripts a and get a JSON response from the 
 ##HELPERS
 In the root DIR there is `env.json`, here you can declare you variables that get passed to compiled PUG template, so you can easily add common data to all views and change it faster if you customers ask for it! (We know that this will happen...).
 
+__.htaccess__ `source/.htaccess` gets copied in `public/`
+
 __Vendors__: Add vendors (scripts/styles) in `gulpfile.js`, there are two array for them.
 
 __BEWARE!__ WRITE SCRIPTs IN THE RIGHT ORDER!
