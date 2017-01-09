@@ -1,13 +1,14 @@
 #StaticStrap
 
-####Bootstrap your static website develop!
+####Kickstart your static website develop!
 
-Tired of setting up all for a simple straight forward code and deploy static website?
-Tired of setting up you develop environment?
-Tired of setting every time your gulp/grunt folders and scripts?
-Tired of setting up a simple mailer?
+Tired of setting up everything for a simple straight forward code and deploy static website?
 
-Here we come, it's already done, you just have to change some path here and there if you want!
+Tired of wasting time setting up your develop environment?
+
+Tired of setting up a simple mailer php class?
+
+Here we come, it's already done, you just have to change some variables.
 
 ##Tools & Framework
     Gulp
@@ -43,6 +44,8 @@ Deploy/Push whole folder but point your webroot to `public/`, run composer insta
 
 
 ## PHP Scripts & PHPMailer
+__You can always directly use your SMTP from your service API and avoid using PHP at all, you choose__
+
 The `bin/` folder in the root it's not exposed in the webroot, it contains composer modules and `.env` variables to use with PHPMailer regarding your SMTP credentials
 
 Put server scripts in `source/bin` to have it copied to `public/bin`, there is an `index.php` to start from, it load the  `main.class.php`
