@@ -1,0 +1,21 @@
+.title-bar.hide-for-large(data-responsive-toggle='main-navigation', data-hide-for='large')
+  button.menu-icon(type='button', data-toggle='')
+  .title-bar-title Menu
+
+nav#main-navigation.top-bar
+  .row
+    .top-bar-left.brand-container.text-center.show-for-medium
+      a(href='/')
+        img.nav-brand(alt="Logo" title="Site Logo")
+    .top-bar-right.nav-container
+        ul.links-container.no-js.large-horizontal.vertical.dropdown.menu(data-responsive-menu='accordion large-dropdown')
+          li
+            a.first-level-link(href="#") Home
+
+          li.has-submenu
+            a(href='#') Ricambi
+            ul.submenu.menu.vertical.nested(data-submenu='')
+              li
+                a.text-center(href="#") Sub1
+              li
+                a.text-center(href="#") Sub2

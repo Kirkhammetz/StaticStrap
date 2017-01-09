@@ -1,0 +1,19 @@
+doctype html
+html(lang="it")
+  head
+    block title
+      title= sitename
+    include ../partials/header
+
+  block bodyClass
+    body
+
+  include ../partials/navigation
+
+  block content
+
+  include ../partials/footer
+
+  script(src='/js/vendors.min.js')
+  script(src='/js/main.min.js')
+  block scripts

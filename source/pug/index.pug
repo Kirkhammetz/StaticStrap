@@ -1,0 +1,13 @@
+extends templates/main
+
+block bodyClass
+  body#home
+
+block content
+  //- Mixins
+  include mixins/wellcome
+
+  .row.columns.text-center
+    +wellcome(sitename)
+
+block scripts
