@@ -12,7 +12,7 @@ Here we come, it's already done, you just have to change some variables.
 
 ##Tools & Framework
     Gulp
-    LESS to process CSS
+    SCSS to process CSS
     PUG (ex Jade) to process HTML
     jQuery (if needed)
     Babel
@@ -34,11 +34,12 @@ Deploy/Push whole folder but point your webroot to `public/`, run composer insta
 - _source/_ Source Container
     + _source/pug_ PUG templates files
     + _source/js_ JS main module, you can expand it on your own
-    + _source/less_ LESS container, main.less gets compiled and minified in root/css/main.min.css
+    + _source/scss_ SCSS container, main.scss gets compiled and minified in root/css/main.min.css
     + _source/bin_ Server Scripts to be copied in public
 - _source/statics_
     + static/images: images that get copied in the public/images
     + static/fonts: place your fonts to have it copied in public/fonts
+    + static/.htaccess: copied to public folder
 - _public/_ Compiled website
 - _bin/_ Composer vendors + dotenv for php not exposed to public
 

@@ -1,21 +1,37 @@
-.title-bar.hide-for-large(data-responsive-toggle='main-navigation', data-hide-for='large')
-  button.menu-icon(type='button', data-toggle='')
+.title-bar.hide-for-large
+  button.menu-icon(type='button', data-toggle="offCanvas")
   .title-bar-title Menu
 
-nav#main-navigation.top-bar
+nav#main-navigation.top-bar.show-for-large.no-js
   .row
-    .top-bar-left.brand-container.text-center.show-for-medium
+    .brand-container.top-bar-left.text-center.show-for-medium
       a(href='/')
-        img.nav-brand(alt="Logo" title="Site Logo")
+        img.nav-brand(alt="Logo" title="Site Logo" src='http://placehold.it/150x40')
     .top-bar-right.nav-container
-        ul.links-container.no-js.large-horizontal.vertical.dropdown.menu(data-responsive-menu='accordion large-dropdown')
-          li
-            a.first-level-link(href="#") Home
+      ul.show-for-medium.dropdown.menu(data-dropdown-menu)
+        li
+          a(href='#') Item 1
+          ul.menu
+            li
+              a(href='#') Item 1A
+        li
+          a(href='#') Item 2
+        li
+          a(href='#') Item 3
+        li
+          a(href='#') Item 4
 
-          li.has-submenu
-            a(href='#') Ricambi
-            ul.submenu.menu.vertical.nested(data-submenu='')
-              li
-                a.text-center(href="#") Sub1
-              li
-                a.text-center(href="#") Sub2
+//- OFF CANVAS FOR MOBILE
+#offCanvas.off-canvas.position-left(data-off-canvas)
+  a(href='/')
+    img.nav-brand(alt="Logo" title="Site Logo"  src='http://placehold.it/200x75')
+  ul.vertical.menu(data-accordion-menu)
+    li
+      a(href='#') Item 1
+      ul.menu.vertical.nested
+        li
+          a(href='#') Item 1A
+        li
+          a(href='#') Item 1B
+    li
+      a(href='#') Item 2

@@ -1,0 +1,11 @@
+#homepage{
+  background: $primary;
+  #main-wrapper {
+    height: 90vh;
+  }
+  h1{
+    color: $white;
+    text-align: center;
+    @extend .vertical-center;
+  }
+}

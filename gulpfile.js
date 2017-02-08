@@ -3,31 +3,37 @@ const gulp   = require('gulp')
 const pug   = require('gulp-pug')
 const uglify = require('gulp-uglify')
 const cssmin = require('gulp-cssmin')
-const less   = require('gulp-less')
 const sass   = require('gulp-sass')
 const rename = require('gulp-rename')
 const concat = require('gulp-concat')
-const merge  = require('merge-stream')
 const autoprefixer = require('gulp-autoprefixer')
 const babel = require('gulp-babel')
 
-//
+const { version } = require('./package.json')
 
 /**
  * JSON DATA
  */
-const DATA = require('./env.json')
+let DATA = require('./env.json')
+DATA.version = version
+
 const Vendors = {
-  "scripts": [
-    "node_modules/jquery/dist/jquery.min.js",
-    "node_modules/foundation-sites/dist/js/foundation.min.js",
-    // "node_modules/approvejs/dist/approve.min.js", form validation if needed
-    // "node_modules/lightbox2/dist/js/lightbox.min.js", useful
-    // "node_modules/blazy/blazy.min.js", lazy load
+  'scripts': [
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/foundation-sites/dist/js/foundation.min.js',
+    'node_modules/webfontloader/webfontloader.js',
+    // 'node_modules/jump.js/dist/jump.js',
+    // 'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    // 'node_modules/gmaps/gmaps.min.js',
+    // 'node_modules/approvejs/dist/approve.min.js',
+    // 'node_modules/lightbox2/dist/js/lightbox.min.js', useful
+    // 'node_modules/blazy/blazy.min.js', lazy load
   ],
-  "styles":[
+  'styles':[
     "node_modules/foundation-sites/dist/css/foundation.min.css",
-    "node_modules/lightbox2/dist/css/lightbox.min.css",
+    // 'node_modules/lightbox2/dist/css/lightbox.min.css',
+    // 'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
+    // 'node_modules/font-awesome/css/font-awesome.min.css',
   ],
 }
 
@@ -36,8 +42,8 @@ const paths = {
   base_pug:  'source/pug',
   pug:       'source/pug/*.pug',
   js:        'source/js/*.js',
-  base_less: 'source/less/',
-  less:      'source/less/main.less',
+  base_scss: 'source/scss/',
+  scss:      'source/scss/main.scss',
   img:       'source/statics/images/**',
   fonts:     'source/statics/fonts/**',
   serverScripts: 'source/bin/**',
@@ -54,6 +60,9 @@ gulp.task('copy_server_scripts', () => {
 gulp.task('copy_vendors_and_statics', () => {
   // Copy fonts statics
   gulp.src(paths.fonts)
+    .pipe(gulp.dest( paths.public + 'fonts'))
+
+  gulp.src('node_modules/font-awesome/fonts/**')
     .pipe(gulp.dest( paths.public + 'fonts'))
 
   // Copy static images
@@ -87,9 +96,9 @@ gulp.task('compile_pug_template', () => {
 /**
  * Compile and minify styles
  */
-gulp.task('compile_minify_LESS', () => {
-  return gulp.src(paths.less)
-    .pipe(less())
+gulp.task('SASS', () => {
+  return gulp.src(paths.scss)
+    .pipe(sass())
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(autoprefixer({
@@ -135,9 +144,9 @@ gulp.task('concat_minify_styles', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.js, ['user_scripts'])
   gulp.watch('source/pug/**/*.pug', ['compile_pug_template'])
-  gulp.watch(paths.base_less + '**/**', ['compile_minify_LESS'])
+  gulp.watch(paths.base_scss + '**/**', ['SASS'])
   gulp.watch(paths.serverScripts, ['copy_server_scripts'])
 })
 
-gulp.task('default', ['copy_server_scripts', 'concat_minify_styles', 'concat_minify_scripts', 'copy_vendors_and_statics', 'user_scripts', 'compile_minify_LESS', 'compile_pug_template'])
+gulp.task('default', ['copy_server_scripts', 'concat_minify_styles', 'concat_minify_scripts', 'copy_vendors_and_statics', 'user_scripts', 'SASS', 'compile_pug_template'])
 gulp.task('dev', ['watch'])

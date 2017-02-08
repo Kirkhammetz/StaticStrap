@@ -1,0 +1,33 @@
+/**
+ * Resets
+ */
+@import 'configs/reset';
+
+/**
+ * FOUNDATION
+ * @NB: keep it to have access to foundation mixins as the breakpoint media queries aka: `@include breakpoint(medium) {}`
+ */
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-everything;
+
+/**
+ * Configurations
+ */
+@import 'configs/breakpoints';
+@import 'configs/vars';
+@import 'configs/colors';
+
+/**
+ * Commons & Mixins
+ */
+@import 'helpers/common';
+
+/*
+ * PARTIALS
+ */
+@import 'partials/navigation';
+
+/*
+ * PAGES
+ */
+@import 'pages/homepage';

@@ -1,0 +1,52 @@
+/* Small only */
+@media screen and (max-width: 39.9375em) {}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+$xxxl: "only screen and (max-width : 1600px)";
+$xxl: "only screen and (max-width : 1400px)";
+$xl: "only screen and (max-width : 1200px)";
+$lg: "only screen and (max-width : 1024px)";
+$xm: "only screen and (max-width : 800px)";
+$md: "only screen and (max-width : 640px)";
+$sm: "only screen and (max-width : 480px)";
+$xs: "only screen and (max-width : 320px)";
+
+$min-xxxl: "only screen and (min-width : 1600px)";
+$min-xxl: "only screen and (min-width : 1400px)";
+$min-xl: "only screen and (min-width : 1200px)";
+$min-lg: "only screen and (min-width : 1024px)";
+$min-xm: "only screen and (min-width : 800px)";
+$min-md: "only screen and (min-width : 640px)";
+$min-sm: "only screen and (min-width : 480px)";
+$min-xs: "only screen and (min-width : 320px)";
+
+// $breakpoints: (
+//   small: 0,
+//   medium: 640px,
+//   large: 1024px,
+//   xlarge: 1200px,
+//   xxlarge: 1440px,
+// ) !default;
+
+@mixin mq($width, $type: min) {
+     @if map_has_key($breakpoints, $width){
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+             @content;
+        }
+    }
+}

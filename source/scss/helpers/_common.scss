@@ -1,0 +1,78 @@
+html{
+	font-size: 16px; // GRID DIMENSION FOR REMs
+}
+
+body{
+	font-size: $base-font-size;
+	line-height: 1.35;
+	@include breakpoint(medium) {
+		font-size: $medium-font-size;
+		line-height: 1.4;
+	}
+	@include breakpoint(large) {
+		font-size: $large-font-size;
+		line-height: 1.6;
+	}
+}
+
+*{
+	color: $black-light;
+	font-family: $font-sans;
+}
+strong{
+	color: $black;
+}
+
+.no-js{
+	display: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	color: $black;
+	small{
+		color: $black;
+	}
+}
+
+// with 1.21 increment ratio
+h1{
+	font-size: 2.7em;
+}
+h2{
+	font-size: 2.288em;
+}
+h3{
+	font-size: 1.939em;
+}
+h4{
+	font-size: 1.643em;
+}
+h5{
+	font-size: 1.392em;
+}
+h6{
+	font-size: 1.18em;
+}
+
+p{
+	font-size: 1em;
+	line-height: 1.4;
+
+}
+
+// Force row to be 1200, change this if you want larger row on larger screen
+.row{
+	max-width: 1200px;
+	max-width: 75rem;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.vertical-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}

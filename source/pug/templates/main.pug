@@ -10,10 +10,11 @@ html(lang="it")
 
   include ../partials/navigation
 
-  block content
+  #main-wrapper.off-canvas-content(data-off-canvas-content)
+    block content
 
   include ../partials/footer
 
-  script(src='/js/vendors.min.js')
-  script(src='/js/main.min.js')
+  script(src=`/js/vendors.min.js?v=${version}`)
+  script(src=`/js/main.min.js?v=${version}`)
   block scripts
